@@ -5,10 +5,8 @@ end
 
 def num_points_scored(player)
   game_hash.each do |team, v|
-    v[:players].each do |k, v|
-      if k == player 
-         return v[:points]
-      end
+    if (v[:players].keys).include?(player) 
+     return v[:players][player][:points]
     end
   end
 end 
